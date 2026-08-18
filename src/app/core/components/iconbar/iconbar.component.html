@@ -1,0 +1,51 @@
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one or more
+  ~ contributor license agreements.  See the NOTICE file distributed with
+  ~ this work for additional information regarding copyright ownership.
+  ~ The ASF licenses this file to You under the Apache License, Version 2.0
+  ~ (the "License"); you may not use this file except in compliance with
+  ~ the License.  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<div style="padding-top: 0" fxFlex="100" fxLayout="column">
+    @for (item of menu; track item.title) {
+        @if (item.visible) {
+            <div
+                style="min-width: 0; padding: 5px 0"
+                [ngClass]="
+                    item.link === activePage
+                        ? 'sp-navbar-item-selected'
+                        : 'sp-navbar-item'
+                "
+            >
+                <button
+                    mat-icon-button
+                    class="button-margin-iconbar iconbar-size"
+                    (click)="go(item.link)"
+                    matTooltip="{{ item.title | translate }}"
+                    matTooltipPosition="right"
+                >
+                    <mat-icon
+                        [ngClass]="
+                            item.link === activePage
+                                ? 'sp-navbar-icon-selected'
+                                : 'sp-navbar-icon'
+                        "
+                        [attr.data-cy]="'navigation-icon-' + item.link"
+                    >
+                        {{ item.icon }}
+                    </mat-icon>
+                </button>
+            </div>
+        }
+    }
+</div>

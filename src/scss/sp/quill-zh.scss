@@ -1,0 +1,118 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+// Quill 2.x 没有内置语言包，Snow 主题的工具栏/提示文案由 CSS content 提供。
+// 这里覆盖为中文。
+
+.ql-snow .ql-picker.ql-header .ql-picker-label::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item::before {
+    content: '正文';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='1']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='1']::before {
+    content: '标题 1';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='2']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='2']::before {
+    content: '标题 2';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='3']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='3']::before {
+    content: '标题 3';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='4']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='4']::before {
+    content: '标题 4';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='5']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='5']::before {
+    content: '标题 5';
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value='6']::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value='6']::before {
+    content: '标题 6';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+    content: '正常';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='small']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='small']::before {
+    content: '小';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='large']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='large']::before {
+    content: '大';
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value='huge']::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value='huge']::before {
+    content: '特大';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+    content: '默认字体';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
+    content: '衬线体';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='monospace']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
+    content: '等宽字体';
+}
+
+.ql-snow .ql-tooltip::before {
+    content: '访问链接：';
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+    content: '编辑';
+}
+
+.ql-snow .ql-tooltip a.ql-remove::before {
+    content: '移除';
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+    content: '保存';
+}
+
+.ql-snow .ql-tooltip[data-mode='link']::before {
+    content: '输入链接：';
+}
+
+.ql-snow .ql-tooltip[data-mode='formula']::before {
+    content: '输入公式：';
+}
+
+.ql-snow .ql-tooltip[data-mode='video']::before {
+    content: '输入视频：';
+}

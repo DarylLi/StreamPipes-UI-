@@ -1,0 +1,381 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/* tslint:disable */
+/* eslint-disable */
+// @ts-nocheck
+// Generated using typescript-generator version 3.2.1263 on 2025-10-23 20:03:54.
+
+import { Storable } from './streampipes-model';
+
+export class Group implements Storable {
+    alternateIds: string[];
+    elementId: string;
+    groupId: string;
+    groupName: string;
+    rev: string;
+    roles: string[];
+
+    static fromData(data: Group, target?: Group): Group {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new Group();
+        instance.alternateIds = __getCopyArrayFn(__identity<string>())(
+            data.alternateIds,
+        );
+        instance.elementId = data.elementId;
+        instance.groupId = data.groupId;
+        instance.groupName = data.groupName;
+        instance.rev = data.rev;
+        instance.roles = __getCopyArrayFn(__identity<string>())(data.roles);
+        return instance;
+    }
+}
+
+export class MatchingResultMessage {
+    description: string;
+    matchingSuccessful: boolean;
+    offerSubject: string;
+    reasonText: string;
+    requirementSubject: string;
+    title: string;
+
+    static fromData(
+        data: MatchingResultMessage,
+        target?: MatchingResultMessage,
+    ): MatchingResultMessage {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new MatchingResultMessage();
+        instance.description = data.description;
+        instance.matchingSuccessful = data.matchingSuccessful;
+        instance.offerSubject = data.offerSubject;
+        instance.reasonText = data.reasonText;
+        instance.requirementSubject = data.requirementSubject;
+        instance.title = data.title;
+        return instance;
+    }
+}
+
+export class Permission implements Storable {
+    elementId: string;
+    grantedAuthorities: PermissionEntry[];
+    objectClassName: string;
+    objectInstanceId: string;
+    ownerSid: string;
+    permissionId: string;
+    publicElement: boolean;
+    readAnonymous: boolean;
+    rev: string;
+
+    static fromData(data: Permission, target?: Permission): Permission {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new Permission();
+        instance.elementId = data.elementId;
+        instance.grantedAuthorities = __getCopyArrayFn(
+            PermissionEntry.fromData,
+        )(data.grantedAuthorities);
+        instance.objectClassName = data.objectClassName;
+        instance.objectInstanceId = data.objectInstanceId;
+        instance.ownerSid = data.ownerSid;
+        instance.permissionId = data.permissionId;
+        instance.publicElement = data.publicElement;
+        instance.readAnonymous = data.readAnonymous;
+        instance.rev = data.rev;
+        return instance;
+    }
+}
+
+export class PermissionEntry {
+    principalType: PrincipalType;
+    sid: string;
+
+    static fromData(
+        data: PermissionEntry,
+        target?: PermissionEntry,
+    ): PermissionEntry {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new PermissionEntry();
+        instance.principalType = data.principalType;
+        instance.sid = data.sid;
+        return instance;
+    }
+}
+
+export class Principal {
+    accountEnabled: boolean;
+    accountExpired: boolean;
+    accountLocked: boolean;
+    groups: string[];
+    objectPermissions: string[];
+    principalId: string;
+    principalType: PrincipalType;
+    rev: string;
+    roles: string[];
+    username: string;
+
+    static fromData(data: Principal, target?: Principal): Principal {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new Principal();
+        instance.accountEnabled = data.accountEnabled;
+        instance.accountExpired = data.accountExpired;
+        instance.accountLocked = data.accountLocked;
+        instance.groups = __getCopyArrayFn(__identity<string>())(data.groups);
+        instance.objectPermissions = __getCopyArrayFn(__identity<string>())(
+            data.objectPermissions,
+        );
+        instance.principalId = data.principalId;
+        instance.principalType = data.principalType;
+        instance.rev = data.rev;
+        instance.roles = __getCopyArrayFn(__identity<string>())(data.roles);
+        instance.username = data.username;
+        return instance;
+    }
+}
+
+export class Privilege implements Storable {
+    elementId: string;
+    rev: string;
+
+    static fromData(data: Privilege, target?: Privilege): Privilege {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new Privilege();
+        instance.elementId = data.elementId;
+        instance.rev = data.rev;
+        return instance;
+    }
+}
+
+export class RawUserApiToken {
+    hashedToken: string;
+    rawToken: string;
+    tokenId: string;
+    tokenName: string;
+
+    static fromData(
+        data: RawUserApiToken,
+        target?: RawUserApiToken,
+    ): RawUserApiToken {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new RawUserApiToken();
+        instance.hashedToken = data.hashedToken;
+        instance.rawToken = data.rawToken;
+        instance.tokenId = data.tokenId;
+        instance.tokenName = data.tokenName;
+        return instance;
+    }
+}
+
+export class Role implements Storable {
+    alternateIds: string[];
+    defaultRole: boolean;
+    elementId: string;
+    label: string;
+    privilegeIds: string[];
+    rev: string;
+
+    static fromData(data: Role, target?: Role): Role {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new Role();
+        instance.alternateIds = __getCopyArrayFn(__identity<string>())(
+            data.alternateIds,
+        );
+        instance.defaultRole = data.defaultRole;
+        instance.elementId = data.elementId;
+        instance.label = data.label;
+        instance.privilegeIds = __getCopyArrayFn(__identity<string>())(
+            data.privilegeIds,
+        );
+        instance.rev = data.rev;
+        return instance;
+    }
+}
+
+export class ServiceAccount extends Principal {
+    clientSecret: string;
+    secretEncrypted: boolean;
+
+    static fromData(
+        data: ServiceAccount,
+        target?: ServiceAccount,
+    ): ServiceAccount {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new ServiceAccount();
+        super.fromData(data, instance);
+        instance.clientSecret = data.clientSecret;
+        instance.secretEncrypted = data.secretEncrypted;
+        return instance;
+    }
+}
+
+export class UserAccount extends Principal {
+    createdAtMillis: number;
+    darkMode: boolean;
+    externallyManagedRoles: boolean;
+    fullName: string;
+    hasAcknowledged: boolean;
+    hideTutorial: boolean;
+    language: string;
+    lastLoginAtMillis: number;
+    password: string;
+    preferredDataProcessors: string[];
+    preferredDataSinks: string[];
+    preferredDataStreams: string[];
+    provider: string;
+    userApiTokens: UserApiToken[];
+
+    static fromData(data: UserAccount, target?: UserAccount): UserAccount {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new UserAccount();
+        super.fromData(data, instance);
+        instance.createdAtMillis = data.createdAtMillis;
+        instance.darkMode = data.darkMode;
+        instance.externallyManagedRoles = data.externallyManagedRoles;
+        instance.fullName = data.fullName;
+        instance.hasAcknowledged = data.hasAcknowledged;
+        instance.hideTutorial = data.hideTutorial;
+        instance.language = data.language;
+        instance.lastLoginAtMillis = data.lastLoginAtMillis;
+        instance.password = data.password;
+        instance.preferredDataProcessors = __getCopyArrayFn(
+            __identity<string>(),
+        )(data.preferredDataProcessors);
+        instance.preferredDataSinks = __getCopyArrayFn(__identity<string>())(
+            data.preferredDataSinks,
+        );
+        instance.preferredDataStreams = __getCopyArrayFn(__identity<string>())(
+            data.preferredDataStreams,
+        );
+        instance.provider = data.provider;
+        instance.userApiTokens = __getCopyArrayFn(UserApiToken.fromData)(
+            data.userApiTokens,
+        );
+        return instance;
+    }
+}
+
+export class UserApiToken {
+    tokenId: string;
+    tokenName: string;
+
+    static fromData(data: UserApiToken, target?: UserApiToken): UserApiToken {
+        if (!data) {
+            return data;
+        }
+        const instance = target || new UserApiToken();
+        instance.tokenId = data.tokenId;
+        instance.tokenName = data.tokenName;
+        return instance;
+    }
+}
+
+export type DefaultPrivilege =
+    | 'PRIVILEGE_READ_PIPELINE'
+    | 'PRIVILEGE_WRITE_PIPELINE'
+    | 'PRIVILEGE_READ_ADAPTER'
+    | 'PRIVILEGE_WRITE_ADAPTER'
+    | 'PRIVILEGE_READ_PIPELINE_ELEMENT'
+    | 'PRIVILEGE_WRITE_PIPELINE_ELEMENT'
+    | 'PRIVILEGE_READ_DASHBOARD'
+    | 'PRIVILEGE_WRITE_DASHBOARD'
+    | 'PRIVILEGE_READ_DASHBOARD_WIDGET'
+    | 'PRIVILEGE_WRITE_DASHBOARD_WIDGET'
+    | 'PRIVILEGE_READ_DATA_EXPLORER_VIEW'
+    | 'PRIVILEGE_WRITE_DATA_EXPLORER_VIEW'
+    | 'PRIVILEGE_READ_DATA_EXPLORER_WIDGET'
+    | 'PRIVILEGE_WRITE_DATA_EXPLORER_WIDGET'
+    | 'PRIVILEGE_READ_APPS'
+    | 'PRIVILEGE_WRITE_APPS'
+    | 'PRIVILEGE_READ_NOTIFICATIONS'
+    | 'PRIVILEGE_READ_FILES'
+    | 'PRIVILEGE_WRITE_FILES'
+    | 'PRIVILEGE_READ_ASSETS'
+    | 'PRIVILEGE_WRITE_ASSETS'
+    | 'PRIVILEGE_READ_GENERIC_STORAGE'
+    | 'PRIVILEGE_WRITE_GENERIC_STORAGE'
+    | 'PRIVILEGE_READ_LABELS'
+    | 'PRIVILEGE_WRITE_LABELS';
+
+export type DefaultRole =
+    | 'ROLE_ADMIN'
+    | 'ROLE_SERVICE_ADMIN'
+    | 'ROLE_PIPELINE_ADMIN'
+    | 'ROLE_PIPELINE_USER'
+    | 'ROLE_DASHBOARD_ADMIN'
+    | 'ROLE_DASHBOARD_USER'
+    | 'ROLE_DATA_EXPLORER_ADMIN'
+    | 'ROLE_DATA_EXPLORER_USER'
+    | 'ROLE_CONNECT_ADMIN'
+    | 'ROLE_ASSET_USER'
+    | 'ROLE_ASSET_ADMIN';
+
+export type PrincipalType = 'USER_ACCOUNT' | 'SERVICE_ACCOUNT' | 'GROUP';
+
+function __getCopyArrayFn<T>(itemCopyFn: (item: T) => T): (array: T[]) => T[] {
+    return (array: T[]) => __copyArray(array, itemCopyFn);
+}
+
+function __copyArray<T>(array: T[], itemCopyFn: (item: T) => T): T[] {
+    return array && array.map(item => item && itemCopyFn(item));
+}
+
+function __getCopyObjectFn<T>(
+    itemCopyFn: (item: T) => T,
+): (object: { [index: string]: T }) => { [index: string]: T } {
+    return (object: { [index: string]: T }) => __copyObject(object, itemCopyFn);
+}
+
+function __copyObject<T>(
+    object: { [index: string]: T },
+    itemCopyFn: (item: T) => T,
+): { [index: string]: T } {
+    if (!object) {
+        return object;
+    }
+    const result: any = {};
+    for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+            const value = object[key];
+            result[key] = value && itemCopyFn(value);
+        }
+    }
+    return result;
+}
+
+function __identity<T>(): (value: T) => T {
+    return value => value;
+}

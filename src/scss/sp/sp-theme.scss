@@ -1,0 +1,73 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+@use '@angular/material' as mat;
+@use './variables' as sp;
+@use '../custom-theme/custom-variables' as customThemeVars;
+@use 'sass:map';
+@use '../custom-theme/theme-colors' as mat3theme;
+
+@include mat.elevation-classes();
+@include mat.app-background();
+
+.nav-input {
+    @include mat.input-density(-3);
+}
+
+.nav-form-field {
+    @include mat.form-field-density(-2);
+}
+
+html {
+    color-scheme: light;
+    @include mat.theme(
+        (
+            color: mat3theme.$primary-palette,
+            tertiary: mat3theme.$tertiary-palette,
+            typography: 'Roboto-Regular, Arial',
+            density: -2,
+        ),
+        $overrides: (
+            primary: light-dark(var(--color-primary), var(--color-primary-dark)),
+            secondary:
+                light-dark(var(--color-secondary), var(--color-secondary-dark)),
+            on-primary: light-dark(#ccc, #fff),
+            primary-container:
+                mat.get-theme-color(mat3theme.$palettes, primary, 95),
+            surface: light-dark(#ffffff, #000000),
+            surface-variant: light-dark(#eaeaea, #2a2a2a),
+            surface-container: light-dark(#f5f5f5, #161616),
+            surface-container-low: light-dark(#fafafa, #121212),
+            surface-container-high: light-dark(#eeeeee, #1c1c1c),
+            on-surface: light-dark(#1a1a1a, #e6e6e6),
+            on-surface-variant: light-dark(#5e5e5e, #b5b5b5),
+            surface-tint: transparent,
+            background: light-dark(#fafafa, #121212)
+        )
+    );
+
+    .dark-mode {
+        color-scheme: dark;
+        @include mat.theme-overrides(
+            $overrides: (
+                primary-container:
+                    mat.get-theme-color(mat3theme.$palettes, primary, 20),
+            )
+        );
+    }
+}
